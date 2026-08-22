@@ -1,0 +1,148 @@
+\documentclass[a4]{article}
+
+% Pacotes essenciais
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{everypage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{circuitikz}
+\usepackage{etoolbox} % Necessário para patching
+\usepackage[backend=biber,style=abnt]{biblatex}
+\addbibresource{ref.bib}
+
+
+% Redefine o \subsection para adicionar uma linha horizontal
+\preto{\subsection}{\vspace{1em}\noindent\textcolor{cyan!70!black}{\rule{\linewidth}{0.5pt}}\par\vspace{0.5em}}
+
+\preto{\subsubsection}{\vspace{1em}\noindent\textcolor{cyan!70!black}{\rule{\linewidth}{0.5pt}}\par\vspace{0.5em}}
+
+\definecolor{MidnightBlue}{RGB}{25,25,112} % ou a cor exata usada na sua barra
+\definecolor{customblue}{RGB}{0, 0, 255}
+\definecolor{customgreen}{RGB}{0,190, 255}
+\definecolor{primary}{RGB}{20, 50, 90}
+\definecolor{secondary}{RGB}{230, 240, 250}
+\definecolor{correctgreen}{RGB}{34, 139, 34}
+\definecolor{alertred}{RGB}{178, 34, 34}
+% Margens
+\geometry{a4paper, margin=2.5cm}
+
+% Cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{}\rhead{\textit{\textcolor{customblue}{Lista1}}}
+%\lhead{\textit{\textcolor{customblue}{Controle digital de aeronaves}}}%alterar
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{\textit{\textcolor{customblue}{\nouppercase{\leftmark}}}} 
+
+% Contador de página para ativar barras só a partir da 3ª página
+\newcounter{mypage}
+
+\AddEverypageHook{%
+  \stepcounter{mypage}%
+  \ifnum\themypage>1
+    % Barra superior
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[cyan!15] (current page.north west) rectangle ([yshift=-1.8cm]current page.north east);
+      \node[anchor=north, text=black, font=\bfseries\large] at ([yshift=-0.9cm]current page.north) 
+      {};
+    \end{tikzpicture}
+    % Barra inferior
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[cyan!15] (current page.south west) rectangle ([yshift=2.0cm]current page.south east);
+      \node[anchor=south, text=black, font=\bfseries\small] at ([yshift=0.9cm]current page.south) {\textit{\textcolor{customblue}{Universidade Federal de Santa Catarina }}};
+    \end{tikzpicture}
+  \fi
+}
+% Formato das seções
+\titleformat{\section}{\bfseries\large}{\thesection.}{1em}{}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings, breakable}
+
+\newtcolorbox{MathBox}{
+  colback=cyan!10,
+  colframe=cyan!50!black,
+  boxrule=0.5pt,
+  arc=4pt,
+  left=4pt,
+  right=4pt,
+  top=4pt,
+  bottom=4pt
+}
+
+%Estilização das seções e subseções
+\titleformat{\section}
+  {\color{MidnightBlue}\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\color{customblue}\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\color{customblue}\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
+
+
+\let\oldtextbf\textbf
+
+\renewcommand{\textbf}[1]{\textcolor{customgreen}{\oldtextbf{#1}}}
+
+% Estilização das listas
+\setlist[itemize]{label=\textcolor{customblue}{\textbullet}}
+\setlist[enumerate]{label=\textcolor{customblue}{\Roman*.}}
+
+% Estilo de sumário
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{2em}{3em}
+\cftsetindents{subsubsection}{5em}{4em}
+
+
+% Capa
+\begin{document}
+\begin{titlepage}
+
+    \centering
+    \vspace*{3cm}
+    {\Huge\bfseries Lista 2 - Instrumentação\\[1.5em]}
+
+    {\large\textit{}}\\[7em]
+    \includegraphics[width=0.3\textwidth]{ufsc}\\[1em]
+    {\Large \textit{Instrumentação}}
+    \vfill
+    %\today
+\end{titlepage}
+
+\newpage
+
+\begin{center}
+    \Large\textbf{Contributors}\\[2em]
+    
+    \begin{itemize}
+        \item \textbf{Marcos Antonio Tomé Oliveira} \\\textit{Graduando em engenharia mecatrônica}\\[0.5em]
+       
+    \end{itemize}
+
+    %\textbf{Revisado em:} 12 de dezembro de 2023\\
+    %\textbf{Organização:} RoboCore\\[6em]
+    %\textbf{Link:} \href{https://events.robocore.net}{https://events.robocore.net}
+\end{center}
+\newpage
+\input{lista2.tex}
+
+% \input{desenvolvimento.tex}
+\end{document}
+

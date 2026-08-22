@@ -1,0 +1,343 @@
+\section*{Questão 2.29}
+
+
+\subsection*{Modelo e relações úteis}
+
+Para um Amp-Op de um único polo podemos escrever a resposta em malha aberta como
+\[
+A(j\omega)=\frac{A_0}{1+j\frac{\omega}{\omega_p}},
+\]
+onde $\omega_p=2\pi f_p$ e a pulsação do polo. A frequência de ganho unitário $f_t$ (gain-bandwidth) relaciona-se com $A_0$ e $f_p$ por
+\[
+f_t = A_0 f_p \quad\Longrightarrow\quad f_p=\frac{f_t}{A_0}.
+\]
+
+No esquema inversor ideal com ganho em malha fechada $A_{CL}=-\dfrac{1}{\beta}$ temos $\beta = 1/|A_{CL}|$. Para um único polo, a função de transferência em malha fechada pode ser aproximada por uma resposta de primeira ordem:
+\[
+H(j\omega)\approx \frac{A_{CL}}{1 + j\frac{\omega}{\omega_B}},
+\]
+onde a largura de banda (pulsacao) em malha fechada $\omega_B$ corresponde a frequencia de −3 db de malha fechada e, para polo unico,
+\[
+f_B \equiv f_{3\text{dB}} \approx \frac{f_t}{|A_{CL}|}.
+\]
+(Essa fórmula e a conhecida relacao \emph{GBW / ganho = largura de banda} valida para amplificadores de um polo.)
+
+\section*{Cálculos numericos}
+
+\paragraph{Dados:}
+\[
+A_{CL} = -20,\qquad |A_{CL}|=20,\qquad A_0=10^5,\qquad f_t=10^6\ \mathrm{Hz}.
+\]
+
+\subsection*{(a) Frequência de −3 dB em malha fechada}
+\[
+f_{3\text{dB}} = \frac{f_t}{|A_{CL}|} = \frac{10^{6}}{20} = 5\times 10^{4}\ \mathrm{Hz}=50\ \text{kHz}.
+\]
+
+\subsection*{(b) Ganho em $0{,}1\,f_t$ e em $10\,f_t$}
+
+A expressão de magnitude (para o modelo de 1º ordem) e
+\[
+|H(f)| = \frac{|A_{CL}|}{\sqrt{1+\left(\dfrac{f}{f_{3\text{dB}}}\right)^2}}.
+\]
+
+\paragraph*{Para } $f = 0{,}1\,f_t = 0{,}1\times 10^{6}=10^{5}\ \mathrm{Hz}$:
+\[
+\frac{f}{f_{3\text{dB}}}=\frac{10^{5}}{5\times10^{4}}=2,
+\]
+\[
+|H|=\frac{20}{\sqrt{1+2^{2}}}=\frac{20}{\sqrt{5}}\approx 8{,}944\ \mathrm{V/V}.
+\]
+Em dB:
+\[
+20\log_{10}(8{,}944)\approx 19{,}03\ \mathrm{dB}.
+\]
+
+\paragraph*{Para } $f = 10\,f_t = 10\times 10^{6}=10^{7}\ \mathrm{Hz}$:
+\[
+\frac{f}{f_{3\text{dB}}}=\frac{10^{7}}{5\times10^{4}}=200,
+\]
+\[
+|H|\approx\frac{20}{\sqrt{1+200^{2}}}\approx\frac{20}{200}=0{,}1\ \mathrm{V/V}.
+\]
+Em dB:
+\[
+20\log_{10}(0{,}1) = -20\ \mathrm{dB}.
+\]
+\subsection*{Vizualização dos resultados}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{2.29.png}
+    \caption{Magnitude do Amplificador}
+    \label{fig:placeholder}
+\end{figure}
+\section*{Observações finais}
+\begin{itemize}
+  \item O ganho DC em dB e $20\log_{10}(20)\approx 26{,}02\ \mathrm{dB}$. Em $f_{3\text{dB}}$ a magnitude e $20/\sqrt{2}\approx 14{,}14$ (≈23,02 dB), ou seja, 3 dB abaixo do ganho DC — isto confirma a interpretacao de $f_{3\text{dB}}$.
+  \item Para $f\gg f_{3\text{dB}}$ a resposta decai aproximadamente a $-20\ \mathrm{dB/dec}$ (comportamento de um polo único), e o valor em $f_t$ tende a $\approx 1$ (0 dB), já que $f_t/ f_{3\text{dB}} = |A_{CL}|$.
+\end{itemize}
+\section*{Questão 2.34}
+
+O amplificador operacional possui \textit{slew rate}
+\[
+SR = 10\ \text{V}/\mu\text{s} = 10\times 10^{6}\ \text{V/s}
+\]
+e a onda triangular possui amplitude pico a pico
+\[
+V_{pp} = 20\ \text{V}.
+\]
+
+Para uma onda triangular, a máxima inclinação ocorre nos trechos lineares e é dada por
+\[
+\left|\frac{dv}{dt}\right|_{\max} = 2 V_{pp} f.
+\]
+Impondo a condição para ausência de distorção:
+\[
+2V_{pp} f_{\max} = SR
+\]
+\[
+f_{\max} = \frac{SR}{2V_{pp}}
+= \frac{10\times 10^{6}}{40}
+= 2.5\times 10^{5}\ \text{Hz}
+= 250\ \text{kHz}.
+\]
+
+\subsection*{Senoide na mesma frequência}
+
+Para uma senoide:
+\[
+v(t)=V_p\sin(2\pi f t)
+\]
+\[
+\left|\frac{dv}{dt}\right|_{\max}=V_p 2\pi f.
+\]
+O limite imposto pelo \textit{slew rate} é
+\[
+V_p 2\pi f = SR,
+\]
+portanto:
+\[
+V_{p,\max} = \frac{SR}{2\pi f}
+= \frac{10\times 10^{6}}{2\pi (250\times10^{3})}
+= \frac{20}{\pi}
+\approx 6.366\ \text{V}.
+\]
+
+A amplitude pico a pico é:
+\[
+V_{pp,\max}=2V_p\approx 12.73\ \text{V}.
+\]
+
+---
+
+\section*{Questão 2.42}
+
+O amplificador operacional possui tensão de offset:
+\[
+v_{os}=4\ \text{mV}.
+\]
+Como a entrada não inversora está aterrada, então:
+\[
+V_+ = 0,\qquad V_- = -v_{os}.
+\]
+
+\subsection*{Caso 1: Entrada ligada diretamente (sem capacitor)}
+
+Aplicamos KCL no nó $V_-$:
+\[
+\frac{V_- - 0}{1\,\text{M}\Omega}
++ \frac{V_- - V_A}{1\,\text{M}\Omega} = 0.
+\]
+Assim:
+\[
+2V_- - V_A = 0
+\]
+\[
+V_A = 2V_-.
+\]
+
+Agora aplicamos KCL no nó $V_A$:
+\[
+\frac{V_A - V_-}{1\,\text{M}\Omega}
++ \frac{V_A - 0}{1\,\text{k}\Omega}
++ \frac{V_A - V_{out}}{1\,\text{M}\Omega}=0.
+\]
+
+Substituindo $V_A=2V_-$:
+\[
+\frac{2V_- - V_-}{1\,\text{M}\Omega}
++ \frac{2V_-}{1\,\text{k}\Omega}
++ \frac{2V_- - V_{out}}{1\,\text{M}\Omega}=0.
+\]
+
+Simplificando:
+\[
+\frac{V_-}{1\,\text{M}\Omega}+\frac{2V_-}{1\,\text{k}\Omega}
++ \frac{2V_- - V_{out}}{1\,\text{M}\Omega}=0.
+\]
+
+Agrupando termos e resolvendo:
+\[
+V_{out}\approx -8.01\ \text{V}.
+\]
+
+---
+
+\subsection*{Caso 2: Entrada acoplada em CA (capacitor $\Rightarrow$ entrada DC aberta)}
+
+No regime DC, a entrada fica aberta.
+
+O nó $V_-$ conecta apenas aos resistores para $V_A$:
+\[
+V_- = V_A = -v_{os}.
+\]
+
+Aplicando KCL no nó $V_A$:
+\[
+\frac{V_A - V_-}{1\,\text{M}\Omega}
++\frac{V_A - V_{out}}{1\,\text{M}\Omega}
++\frac{V_A - 0}{1\,\text{k}\Omega}=0,
+\]
+mas como $V_A - V_- = 0$, sobra:
+\[
+\frac{V_A - V_{out}}{1\,\text{M}\Omega}
++\frac{V_A}{1\,\text{k}\Omega}=0.
+\]
+
+Multiplicando por $1\,\text{M}\Omega$:
+\[
+V_A - V_{out} + 1000\,V_A = 0.
+\]
+
+\[
+V_{out} = 1001\,V_A = -1001\,v_{os}.
+\]
+
+\[
+V_{out}\approx -4.004\ \text{V}.
+\]
+
+---
+
+\subsection*{Caso 3: Resistor de 1 k$\Omega$ acoplado em CA (aberto no DC)}
+
+Agora o nó $A$ não tem caminho DC para terra.
+
+KCL no nó $V_-$:
+\[
+\frac{V_- - 0}{1\,\text{M}\Omega}
++ \frac{V_- - V_A}{1\,\text{M}\Omega}=0
+\]
+\[
+2V_- - V_A = 0
+\]
+\[
+V_A = 2V_-.
+\]
+
+KCL no nó $A$ (sem resistor para terra):
+\[
+\frac{V_A - V_-}{1\,\text{M}\Omega}
++ \frac{V_A - V_{out}}{1\,\text{M}\Omega}=0.
+\]
+
+Substituindo $V_A = 2V_-$:
+\[
+\frac{2V_- - V_-}{1\,\text{M}\Omega}
++ \frac{2V_- - V_{out}}{1\,\text{M}\Omega}=0
+\]
+
+\[
+\frac{V_-}{1\,\text{M}\Omega}
++ \frac{2V_- - V_{out}}{1\,\text{M}\Omega}=0.
+\]
+
+Somando:
+\[
+3V_- - V_{out} = 0
+\]
+\[
+V_{out}=3V_- = -3v_{os}.
+\]
+
+\[
+V_{out}=-12\ \text{mV}.
+\]
+
+---
+
+\section*{Questão 12.1}
+
+A função de transferência é:
+\[
+T(j\omega)=\frac{\omega_0}{\sqrt{\omega^2+\omega_0^2}}
+=\frac{1}{\sqrt{1+(\omega/\omega_0)^2}}.
+\]
+
+Vamos calcular os valores de $|T|$ e de $20\log_{10}|T|$ para:
+\[
+\omega/\omega_0 = 0,\ 0.5,\ 1,\ 10,\ 100.
+\]
+
+\subsection*{Cálculo ponto a ponto}
+
+\[
+|T(0)| = 1
+\]
+
+\[
+|T(0.5\omega_0)| = \frac{1}{\sqrt{1+0.5^2}}
+= 0.8944
+\]
+
+\[
+|T(\omega_0)| = \frac{1}{\sqrt{2}}
+= 0.7071
+\]
+
+\[
+|T(10\omega_0)| = \frac{1}{\sqrt{101}}
+= 0.09950
+\]
+
+\[
+|T(100\omega_0)| = \frac{1}{\sqrt{10001}}
+= 0.009999
+\]
+
+Os valores em decibéis:
+
+\[
+20\log_{10}|T(0)| = 0\ \text{dB}
+\]
+\[
+20\log_{10}(0.8944) = -0.969\ \text{dB}
+\]
+\[
+20\log_{10}(0.7071) = -3.010\ \text{dB}
+\]
+\[
+20\log_{10}(0.09950) = -20.04\ \text{dB}
+\]
+\[
+20\log_{10}(0.009999) = -40.00\ \text{dB}
+\]
+
+\subsection*{Tabela resumo}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c|c}
+\hline
+$\omega/\omega_0$ & $|T(j\omega)|$ & $20\log_{10}|T(j\omega)|$ (dB) \\
+\hline
+0   & 1.0000   & 0.00 \\
+0.5 & 0.8944   & -0.97 \\
+1   & 0.7071   & -3.01 \\
+10  & 0.09950  & -20.04 \\
+100 & 0.009999 & -40.00 \\
+\hline
+\end{tabular}
+\end{table}
+
