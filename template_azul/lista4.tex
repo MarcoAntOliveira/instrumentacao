@@ -1,110 +1,66 @@
 \begin{enumerate}[label=\textbf{\arabic*)}, leftmargin=*]
 
-    \item 
-    \begin{itemize}
-        \item \textbf{transdutor:} Transforma um tipo de energia em outro, podem ser encontrados em estágio de entrada e saída.
-        \item \textbf{sensor:} capta uma grandeza física.
-        \item \textbf{atuador:} Transforma um sinal elétrico em outra grandeza física.
-    \end{itemize}
+    \item À medida que o cursor se move, a razão do divisor de tensão muda e, consequentemente, altera-se a tensão de saída.
 
-    \item Um transdutor ativo possui alimentação externa própria, enquanto um transdutor passivo não necessita de energia adicional.
+    \item São dispositivos cuja resistência varia de acordo com a sua deformação mecânica.
 
-    \item Um sinal analógico possui um sinal contínuo, ou seja, sua curva não possui bicos, já o sinal digital varia entre zeros e uns.
+    \item Os extensômetros diferem entre si quanto à direção de aplicação da força:
+        \begin{itemize}
+            \item \textbf{Uniaxial:} mede em apenas uma direção;
+            \item \textbf{Biaxial:} mede em duas direções;
+            \item \textbf{Roseta:} mede em três direções (geralmente $0^\circ$, $45^\circ$ e $90^\circ$).
+        \end{itemize}
 
-    \item Para a saída em corrente, o instrumento/sensor gera um sinal em forma de corrente elétrica; para saída em tensão, o sensor gera saída em tensão.
+    \item Para um extensômetro metálico $\Delta R = 0{,}24\,\Omega$, enquanto para um extensômetro semicondutor $\Delta R = 12\,\Omega$. Isso significa que o semicondutor apresenta uma variação de resistência 50 vezes maior que o metálico.
 
-    \item Em um instrumento caracterizado como simples há apenas uma conversão no sinal de entrada, no instrumento composto há mais de uma conversão no sinal de entrada.
+    \item No NTC, à medida que a temperatura aumenta, a resistência diminui. No PTC, conforme a temperatura aumenta, a resistência também aumenta.
 
-    \item No método de deflexão a grandeza provoca uma resposta direta (deflexão) no instrumento, e essa resposta é usada para medir a grandeza. No método de detecção de erro nulo, a grandeza é comparada a um sinal de referência ajustável, até que o erro seja nulo.
+    \item O sensor sofre interferência no campo magnético gerado pelo seu indutor devido à aproximação ou presença de materiais metálicos.
 
-    \item Os erros aleatórios interferem em cada medida de maneira aleatória, enquanto erros sistemáticos acontecem de maneira semelhante.
-    \item \textbf{Análise do alvo (Exatidão / Precisão):}
-    \begin{enumerate}[label=\alph*)]
-        \item Alta exatidão e alta precisão.
-        \item Baixa exatidão e alta precisão.
-        \item Alta exatidão e baixa precisão.
-        \item Baixa exatidão e baixa precisão.
-    \end{enumerate}
+    \item Definições de distância sensora:
+        \begin{itemize}
+            \item \textbf{Distância sensora nominal:} distância máxima teórica na qual o sensor pode operar, considerando um alvo padrão;
+            \item \textbf{Distância sensora operacional:} distância na qual o sensor opera com segurança na prática, levando em conta as tolerâncias de fabricação e condições industriais.
+        \end{itemize}
 
-    \item \textbf{Algarismos significativos:}
-    \begin{enumerate}[label=\alph*)]
-        \item $4{,}35 \rightarrow 3$ algarismos significativos.
-        \item $0{,}01 \rightarrow 1$ algarismo significativo.
-        \item $0{,}0000052 \rightarrow 2$ algarismos significativos.
-        \item $400{,}510 \rightarrow 6$ algarismos significativos.
-        \item $1000{,}1 \rightarrow 5$ algarismos significativos.
-        \item $0{,}00000000000001 \rightarrow 1$ algarismo significativo.
-    \end{enumerate}
+    \item O sensor capacitivo detecta materiais metálicos e não metálicos por meio da alteração no campo elétrico, enquanto o sensor indutivo detecta apenas materiais metálicos via campo magnético.
 
-    \item \textbf{Arredondamento:}
-    \begin{enumerate}[label=\alph*)]
-        \item $2{,}2\bar{4}5 \rightarrow 2{,}25$
-        \item $6\bar{9},87 \rightarrow 70$
-        \item $123,\bar{1}2 \rightarrow 123{,}1$
-    \end{enumerate}
+    \item Circuitos de saída PNP e NPN:
+        \begin{itemize}
+            \item \textbf{PNP:} a saída utiliza um transistor que chaveia o VCC (terminal positivo da alimentação), fornecendo sinal positivo para a carga;
+            \item \textbf{NPN:} a saída utiliza um transistor que chaveia o GND (terminal negativo da alimentação), conectando o sinal negativo à carga.
+        \end{itemize}
 
-    \item \textbf{Operações com algarismos significativos:}
-    \begin{enumerate}[label=\alph*)]
-        \item $12{,}45 \times 7{,}2 = 89{,}64 \approx 90$
-        \item $5{,}2 + 7{,}25 = 12{,}45 \approx 12{,}5$
-        \item $351{,}12 - 136 = 215{,}12 \approx 215$
-        \item $134{,}15 / 2{,}15 = 6{,}2395 \approx 6{,}24$
-        \item $(12{,}10 + 5{,}1) \times (6{,}75 - 4{,}89) = 17{,}2 \times 1{,}86 = 31{,}992 \approx 32$
-    \end{enumerate}
+    \item Em um sensor NPN com saída normalmente aberta (NA), dois fios são destinados à alimentação e o terceiro controla o chaveamento do sinal negativo para a carga quando acionado. No sensor PNP normalmente fechado (NF), o acionamento interrompe o sinal positivo mantido previamente na saída.
 
-    \item
-    \begin{enumerate}[label=\alph*)]
-        \item \textbf{Médias aritméticas:}
-        \[
-        \bar{P} = \frac{24{,}95 + 25{,}34 + 25{,}14 + 24{,}86 + 25{,}43}{5} = 25{,}14 \approx 25
-        \]
-        \[
-        \bar{i} = \frac{2{,}95 + 3{,}05 + 3{,}00 + 2{,}98 + 3{,}10}{5} = 3{,}02 \approx 3
-        \]
+    \item Na ligação em série, a carga só é acionada se todos os sensores forem ativados simultaneamente. Na ligação em paralelo, a carga é acionada caso qualquer um dos sensores seja ativado.
 
-        \item \textbf{Desvio padrão da média:}
-        \[
-        \sigma_P = 0{,}24419 \implies \sigma_{\bar{P}} = \frac{0{,}24419}{\sqrt{5}} = 0{,}1092 = \Delta P
-        \]
-        \[
-        \sigma_I = 0{,}05941 \implies \sigma_{\bar{I}} = \frac{0{,}05941}{\sqrt{5}} = 0{,}02657 = \Delta I
-        \]
+    \item A frequência máxima de operação é o número máximo de comutações (chaveamentos) por segundo que o sensor consegue realizar.
 
-        \item \textbf{Cálculo da Tensão ($V = P / I$) e Incerteza Propagada:}
-        \[
-        \bar{V} = \frac{\bar{P}}{\bar{I}} = \frac{25}{3} = 8{,}33\,\text{V} \approx 8\,\text{V}
-        \]
-        
-        Derivadas parciais:
-        \[
-        \frac{\partial V}{\partial P} = \frac{1}{I} = \frac{1}{3}
-        \]
-        \[
-        \frac{\partial V}{\partial I} = -P \cdot I^{-2} = -25 \cdot 3^{-2} = -2{,}778
-        \]
+    \item Trata-se da histerese: a diferença entre a distância na qual o sensor é ativado durante a aproximação do objeto e a distância na qual ele é desativado durante o seu afastamento.
 
-        Propagação da incerteza:
-        \[
-        \Delta V = \left| \frac{\partial V}{\partial P} \right| \Delta P + \left| \frac{\partial V}{\partial I} \right| \Delta I
-        \]
-        \[
-        \Delta V = \frac{1}{3} \cdot 0{,}11 + 2{,}77 \cdot 0{,}027 = 0{,}112
-        \]
+    \item O diâmetro do corpo de um sensor de proximidade (como os indutivos ou capacitivos) determina diretamente o alcance nominal de detecção ($S_n$) e o tamanho mínimo do objeto a ser detectado:
+        \begin{itemize}
+            \item \textbf{Alcance de detecção:} quanto maior o diâmetro da bobina ou núcleo, maior é a área da superfície ativa e a intensidade do campo gerado. Consequentemente, corpos maiores (ex.: M30) alcançam distâncias de comutação muito superiores aos de corpos menores (ex.: M8 ou M12);
+            \item \textbf{Área do alvo:} para atingir a distância nominal especificada, o objeto deve possuir dimensões iguais ou superiores à superfície ativa do sensor (geralmente uma placa de aço quadrada com lado equivalente ao diâmetro do sensor). Objetos menores reduzem o alcance efetivo.
+        \end{itemize}
 
-        Cálculo do valor médio direto de $V$:
-        \[
-        \bar{V} = \frac{8{,}46 + 8{,}31 + 8{,}38 + 8{,}34 + 8{,}20}{5} = 8{,}34 \approx 8
-        \]
-        \[
-        \sigma_{\bar{V}} = 0{,}08541
-        \]
-
-        \item \textbf{Resultados no formato padrão:}
-        \begin{align*}
-        V &= 8{,}34 \pm 0{,}09 \\
-        i &= 3{,}02 \pm 0{,}05 \\
-        P &= 25{,}14 \pm 0{,}01
-        \end{align*}
-    \end{enumerate}
+    \item A diferença central entre sensores faceados e não faceados reside na presença de blindagem metálica ao redor da cabeça sensora, alterando o campo e a forma de instalação:
+        \begin{itemize}
+            \item \textbf{Sensores Faceados (\textit{Shielded} / Blindados):}
+                \begin{itemize}
+                    \item \textit{Construção:} possuem um anel metálico protetor envolvendo a superfície ativa até a borda frontal;
+                    \item \textit{Campo elétrico/magnético:} é concentrado e direcionado apenas frontalmente (direção axial);
+                    \item \textit{Instalação:} podem ser montados embutidos (rentes) em superfícies metálicas sem sofrer interferência lateral do material;
+                    \item \textit{Alcance:} apresentam distância de detecção menor comparada a um sensor não faceado de mesmo diâmetro.
+                \end{itemize}
+            \item \textbf{Sensores Não Faceados (\textit{Unshielded} / Não Blindados):}
+                \begin{itemize}
+                    \item \textit{Construção:} não possuem blindagem lateral na ponta, deixando a superfície ativa sobressaída do corpo metálico;
+                    \item \textit{Campo elétrico/magnético:} dispersa-se tanto frontal quanto lateralmente;
+                    \item \textit{Instalação:} exigem uma área livre de metal ao redor da cabeça para evitar acionamentos falsos ou degradação do sinal;
+                    \item \textit{Alcance:} oferecem maior distância de detecção (até 50\% a mais) para o mesmo diâmetro de corpo.
+                \end{itemize}
+        \end{itemize}
 
 \end{enumerate}

@@ -23,6 +23,28 @@
 \usepackage{xcolor}
 \usepackage{circuitikz}
 \usepackage{etoolbox} % Necessário para patching
+% Importa o pacote minted
+% No seu preâmbulo (antes de \begin{document})
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage{booktabs}
+\usepackage{float}
+% Configuração básica para o código ficar bonito
+\lstset{
+    backgroundcolor=\color{gray!10},   
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{purple},
+    language=Python,
+    showstringspaces=false
+}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
 \usepackage[backend=biber,style=abnt]{biblatex}
 \addbibresource{ref.bib}
 
@@ -44,7 +66,7 @@
 
 % Cabeçalho e rodapé
 \pagestyle{fancy}
-\fancyhf{}\rhead{\textit{\textcolor{customblue}{Lista1}}}
+\fancyhf{}\rhead{\textit{\textcolor{customblue}{Lista7}}}
 %\lhead{\textit{\textcolor{customblue}{Controle digital de aeronaves}}}%alterar
 \fancyfoot[C]{\thepage}
 \fancyhead[L]{\textit{\textcolor{customblue}{\nouppercase{\leftmark}}}} 
@@ -117,7 +139,7 @@
 
     \centering
     \vspace*{3cm}
-    {\Huge\bfseries Lista 2 - Instrumentação\\[1.5em]}
+    {\Huge\bfseries Lista 7- Instrumentação\\[1.5em]}
 
     {\large\textit{}}\\[7em]
     \includegraphics[width=0.3\textwidth]{ufsc}\\[1em]
@@ -141,7 +163,7 @@
     %\textbf{Link:} \href{https://events.robocore.net}{https://events.robocore.net}
 \end{center}
 \newpage
-\input{lista2.tex}
+\input{atv4.tex}
 
 % \input{desenvolvimento.tex}
 \end{document}
